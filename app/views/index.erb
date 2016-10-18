@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Recipes: </h1>
+    <form action="/recipes/new" method="get">
+      <input type="submit" name="name" value="New Recipe">
+    </form>
+    <% @recipes.each do |recipe|%>
+      <%=recipe.name%>
+      <form action="/recipes/<%=recipe.id%>" method="GET">
+        <input type="submit" value="More">
+      </form>
+    <% end %>
+  </body>
+</html>
